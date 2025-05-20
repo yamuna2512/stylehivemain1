@@ -12,7 +12,7 @@ class UserSignUp(generics.CreateAPIView):
 
 class UserSignIn(generics.CreateAPIView):
     queryset = User.objects.all()
-    serializer_class = UserSignUpSerializer
+    serializer_class = UserSignInSerializer
 
 class UserProfile(CustomLoginRequiredMixin,generics.ListAPIView):
     serializer_class= UserSerializer

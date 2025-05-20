@@ -3,6 +3,8 @@ from rest_framework import serializers
 from django.contrib.auth.hashers import make_password, check_password
 from secrets import token_hex
 import datetime
+# from apps.users import User
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
