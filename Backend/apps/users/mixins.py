@@ -1,20 +1,20 @@
 from rest_framework import status
 import datetime
-
+from rest_framework.response import Response
 from config.helpers.error_response import error_response
 from .models import User
 
-class CustomLoginRequiredMixin ():
+class CustomLoginRequiredMixin():
 
-
-    def dispatch(self, request, *args, **Kwargs):
+    def dispatch(self, request, *args, **kwargs):
         if 'Authorization' not in request.headers:
-            return error_response('please set Auth-Token', status.HTTP_401_UNAUTHORIZED)
-    
+            return error_response('Please set Auth-Token.', status.HTTP_401_UNAUTHORIZED)
+
         token = request.headers['Authorization']
         now = datetime.datetime.now()
-        login_user = User.objects.filter(token=token, token_expires_gt=now)
+        login_user = User.objects.filter(token=token, token_expires__gt=now)
         if len(login_user) == 0:
-         return error_response('The token is valid or expired', status.HTTP_401_UNAUTHORIZED)
-         request.login_user = login_user[0]
-         return super().dispatch(request, *args, **Kwargs)
+            return error_response('The token is invalid or expired.', status.HTTP_401_UNAUTHORIZED)
+
+        request.login_user = login_user[0]
+        return super().dispatch(request, *args, **kwargs)
