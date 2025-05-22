@@ -4,7 +4,7 @@ from cloudinary.models import CloudinaryField
 from apps.categories.serializers import CategorySerializer
 
 class ProductSerializer(serializers.ModelSerializer):
-    image = serializers.SerializerMethodField(read_only=True)
+    image = serializers.ImageField(read_only=True)
     category = CategorySerializer(many=False, read_only=True)
 
     class Meta:

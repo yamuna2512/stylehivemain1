@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'apps.categories',
     'apps.products',
     'apps.carts',
+    'apps.orders',
+    'apps.order_items',
     'cloudinary',
     'corsheaders',
     

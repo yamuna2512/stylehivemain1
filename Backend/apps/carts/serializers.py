@@ -3,6 +3,8 @@ from rest_framework import serializers
 from apps.users.serializers import UserSerializer
 from apps.products.serializers import ProductSerializer
 
+
+
 class CartListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cart
@@ -14,6 +16,7 @@ class CartListSerializer(serializers.ModelSerializer):
         ]
         depth = 1
 
+
 class CartSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cart
@@ -24,6 +27,7 @@ class CartSerializer(serializers.ModelSerializer):
             'quantity',
             'total_price'
         ]
+        
     def validate(self, data):
         errors = {}
         if 'quantity' not in data or not data['quantity']:

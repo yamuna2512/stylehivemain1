@@ -18,6 +18,7 @@ class CartList(CustomLoginRequiredMixin, generics.ListAPIView):
 
     def get_queryset(self):
         return Cart.objects.filter(user=self.request.login_user.id)
+    
 
 class CartAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
     queryset = Cart.objects.all()
@@ -44,7 +45,7 @@ class CartAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
         # Convert Model to Serializer
         serializer = CartListSerializer(new_cart)
 
-        # Response data as Dict
+        # Response data as Dictionary
         return Response(serializer.data)
 
 class CartUpdate(CustomLoginRequiredMixin, generics.UpdateAPIView):
@@ -72,5 +73,5 @@ class CartUpdate(CustomLoginRequiredMixin, generics.UpdateAPIView):
         # Convert Model to Serializer
         serializer = CartListSerializer(cart[0])
 
-        # Response data as Dict
+        # Response data as Dictionary
         return Response(serializer.data)
