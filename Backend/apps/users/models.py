@@ -23,7 +23,7 @@ class User (models.Model):
         'Token Expiration Date', blank=True, null=True
     )
 
-    creayted_at = models.DateTimeField(
+    created_at = models.DateTimeField(
         'Creation Date', blank=True, auto_now_add=True
     )
 
