@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { LOGIN_USER_KEY } from "../../API";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import ReactDOM from "react-dom";
 
 import SignOutIcon from "../../assets/images/sign-out.png";

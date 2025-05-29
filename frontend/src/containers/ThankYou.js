@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 
 import Footer from '../components/default/Footer';
 import Header from '../components/default/Header';

@@ -1,5 +1,5 @@
 import axios from "axios";
-require('dotenv').config()
+// require('dotenv').config()
 
 export const LOGIN_USER_KEY = "HIVE_TECHWEAR_LOGIN_USER_KEY";
 const { REACT_APP_ENVIRONMENT, REACT_APP_API_BASE_URL_PROD, REACT_APP_API_BASE_URL_DEV } = process.env;
