@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { LOGIN_USER_KEY } from "../../API";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ReactDOM from "react-dom";
 
 import SignOutIcon from "../../assets/images/sign-out.png";
@@ -11,7 +11,7 @@ import { signOutAction } from "../../reducks/users/actions";
 
 export default function SignOutLink() {
     const dispatch = useDispatch();
-    const history = useHistory();
+    const history = useNavigate();
     const [openModalSignOut, setOpenModalSignOut] = useState(false);
     return (
         <>

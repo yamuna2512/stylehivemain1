@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/HIVETechwear.svg';
 import { getUser } from '../../reducks/users/selectors';
@@ -12,7 +12,7 @@ import SignUpLink from './SignUpLink';
 
 export default function Header(props) {
 	const { totalCart, setSearch, setPage } = props;
-	const history = useHistory();
+	const history = useNavigate();
 	const { pathname } = history.location;
 	const selector = useSelector((state) => state);
 	const user = getUser(selector);
